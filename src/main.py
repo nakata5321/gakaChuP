@@ -1,11 +1,12 @@
 from web_parser.hashtag_parser import *
 import sys
 
+
 def main():
-    post_link = 'https://www.instagram.com/p/B0glJybHOGS/'
-    parser = HashTagParser(headless=False);
-    hashfield = HashField();
-    parser.signIn('gakachup', 'vladison99')
+    post_link = "https://www.instagram.com/p/B0glJybHOGS/"
+    parser = HashTagParser(headless=False)
+    hashfield = HashField()
+    parser.signIn("gakachu42", "qwertycsirobotics")
     time.sleep(5)
 
     parser.getHashTagMap(post_link, hashfield)
@@ -14,5 +15,5 @@ def main():
     print(hashfield.getHashTable())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

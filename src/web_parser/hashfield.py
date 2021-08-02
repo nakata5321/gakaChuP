@@ -27,7 +27,7 @@ class HashField:
             self.__tagTree[hashtag]["id"] = self.__countTags
             self.__tagTree[hashtag]["count"] = 0
             self.__tagTree[hashtag]["rel"] = []
-            self.__tagPopularity.loc[self.__countTags] = [hashtag, 0, 0, 0]
+            self.__tagPopularity.loc[self.__countTags] = [hashtag, 0, 0, 0, 0]
             self.__countTags += 1
 
     def checkInTree(self, hashtag):

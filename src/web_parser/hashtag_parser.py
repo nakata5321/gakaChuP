@@ -97,19 +97,17 @@ class HashTagParser:
 
     def getPostLikers(self, postlink):
         self.__webDriver.get(postlink)
-        self.__webDriver.execute_script(
-            "window.scrollTo(0, document.body.scrollHeight);"
-        )
         time.sleep(1)
-        userid_element = self.__webDriver.find_element_by_xpath(
-            "/html/body/div[1]/section/main/div/div/article/div[2]/section[2]/div/div/button"
-        ).click()
+        # this class "zV_Nj" for special post and should by change if change post
+        userid_element = self.__webDriver.find_element_by_class_name('zV_Nj')
         time.sleep(1)
 
         users = {}
         heightPage = self.__webDriver.find_element_by_xpath(
-            "/html/body/div[4]/div/div[2]/div/div"
-        ).value_of_css_property("padding-top")
+            "//div[@style='flex-direction: column; padding-bottom: 3575px; padding-top: 0px;']"
+        )
+        print(heightPage)
+        heightPage.value_of_css_property("padding-top")
         match = False
         usersCount = 0
         while match == False:
